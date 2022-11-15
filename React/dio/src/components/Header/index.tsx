@@ -1,6 +1,7 @@
 import React from "react";
-import logo from "../../assets/logo-dio.png"
-import {Button} from '../Button'
+import { useNavigate } from "react-router-dom";
+import logo from "../../assets/logo-dio.png";
+import {Button} from '../Button';
 
 import {
     BuscarInputContainer,
@@ -16,6 +17,10 @@ import {
 import { IHeader } from "./types";
 
 const Header = ({autenticado}: IHeader) => {
+
+    const navigate1 = useNavigate();
+    const handleCliCadastro = () => {
+        navigate1('/cadastro')}
     return (
         <Wrapper>
             <Container>
@@ -38,7 +43,7 @@ const Header = ({autenticado}: IHeader) => {
                         <>
                             <MenuRight href="#">Home</MenuRight>     
                             <Button title="Entrar"/>
-                            <Button title="Cadastrar"/> 
+                            <Button onClick={handleCliCadastro} title="Cadastrar"/> 
                         </>          
                     )}
                 </Row> 
